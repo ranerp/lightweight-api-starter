@@ -5,7 +5,8 @@
     "noImplicitAny": false,
     "sourceMap": true,
     "outDir": "build",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules",

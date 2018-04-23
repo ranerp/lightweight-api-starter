@@ -35,7 +35,8 @@
     "npm": "^5.8.0",
     "path": "^0.12.7",
     "ts-loader": "^4.2.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "@types/es6-promise": "^3.3.0",
