@@ -2,11 +2,11 @@ import * as glob from 'glob';
 import * as path from 'path';
 import { Endpoint } from "./endpoint/endpoint";
 
-const handlerPaths = path.resolve(`${__dirname}/../modules`);
-const globPathToHandlers = `${handlerPaths}/**/handlers/*.ts`;
+const modulesPath = path.resolve(`${__dirname}/../modules`);
+const handlerPaths = `${modulesPath}/**/handlers/*.ts`;
 
 const handlers: Endpoint[] = glob
-    .sync(globPathToHandlers)
+    .sync(handlerPaths)
     .map( file => {
         return require(file).endpoint;
     });
