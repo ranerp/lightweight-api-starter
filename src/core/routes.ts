@@ -1,6 +1,6 @@
 import * as urlJoin from 'url-join';
 import { HttpMethod } from "./http/http-method";
-import endpoints from "./endpoints";
+import endpoints from "./resources";
 import { Router } from "express";
 import { IRouterMatcher } from "express-serve-static-core";
 
