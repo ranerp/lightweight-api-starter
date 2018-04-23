@@ -6,6 +6,14 @@ import { IRouterMatcher } from "express-serve-static-core";
 
 const router = Router();
 
+const routerMethods = {
+    [HttpMethod.GET]: router.get.bind(router),
+    [HttpMethod.POST]: router.post.bind(router),
+    [HttpMethod.PUT]: router.put.bind(router),
+    [HttpMethod.PATCH]: router.patch.bind(router),
+    [HttpMethod.DELETE]: router.delete.bind(router),
+};
+
 const endpointPrefix = '/api';
 
 router.get('/', ((req, res) => {
@@ -13,29 +21,8 @@ router.get('/', ((req, res) => {
 }));
 
 for (let handler of handlers) {
-    let routerMethod: IRouterMatcher<any> = null;
-
-    let handlerEndpoint = urlJoin(endpointPrefix, handler.path);
-
-    switch(handler.type) {
-        case HttpMethod.GET:
-            routerMethod = router.get.bind(router);
-            break;
-        case HttpMethod.POST:
-            routerMethod = router.post.bind(router);
-            break;
-        case HttpMethod.PUT:
-            routerMethod = router.put.bind(router);
-            break;
-        case HttpMethod.PATCH:
-            routerMethod = router.patch.bind(router);
-            break;
-        case HttpMethod.DELETE:
-            routerMethod = router.delete.bind(router);
-            break;
-        default:
-            break;
-    }
+    const handlerEndpoint = urlJoin(endpointPrefix, handler.path);
+    const routerMethod: IRouterMatcher<any> = routerMethods[handler.type];
 
     if(!routerMethod) {
         continue;
