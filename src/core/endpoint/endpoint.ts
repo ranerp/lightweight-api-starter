@@ -1,4 +1,4 @@
-import { HttpMethod } from "./http-method";
+import { HttpMethod } from "../http/http-method";
 import { PathParams } from "express-serve-static-core";
 import { EndpointFunction } from "./endpoint-function";
 

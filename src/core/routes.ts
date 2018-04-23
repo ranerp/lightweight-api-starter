@@ -1,5 +1,5 @@
 import * as urlJoin from 'url-join';
-import { HttpMethod } from "./http-method";
+import { HttpMethod } from "./http/http-method";
 import handlers from "./handlers";
 import { Router } from "express";
 import { IRouterMatcher } from "express-serve-static-core";
@@ -30,7 +30,7 @@ for (let handler of handlers) {
 
     routerMethod(handlerEndpoint, (req, res) => {
         handler.function(req.params).then( content => {
-            res.json(content);
+            res.status(content.status).json(content.body);
         });
     });
 }
