@@ -1,6 +1,6 @@
 import * as urlJoin from 'url-join';
 import { HttpMethod } from "./http/http-method";
-import handlers from "./handlers";
+import endpoints from "./endpoints";
 import { Router } from "express";
 import { IRouterMatcher } from "express-serve-static-core";
 
@@ -17,19 +17,19 @@ const routerMethods = {
 const endpointPrefix = '/api';
 
 router.get('/', ((req, res) => {
-    res.send('Lightweight API Starter');
+    res.send('Lightweight REST API Starter');
 }));
 
-for (let handler of handlers) {
-    const handlerEndpoint = urlJoin(endpointPrefix, handler.path);
-    const routerMethod: IRouterMatcher<any> = routerMethods[handler.type];
+for (let endpoint of endpoints) {
+    const routePath = urlJoin(endpointPrefix, endpoint.path);
+    const routerMethod: IRouterMatcher<any> = routerMethods[endpoint.type];
 
     if(!routerMethod) {
         continue;
     }
 
-    routerMethod(handlerEndpoint, (req, res) => {
-        handler.function(req.params).then( content => {
+    routerMethod(routePath, (req, res) => {
+        endpoint.function(req.params).then( content => {
             res.status(content.status).json(content.body);
         });
     });
