@@ -45,6 +45,7 @@
     "@types/jest": "^22.2.3",
     "@types/lodash": "^4.14.107",
     "@types/node": "^9.6.6",
+    "@types/url-join": "^0.8.2",
     "jasmine": "^3.1.0",
     "nodemon": "^1.17.3",
     "rest": "^2.0.0",

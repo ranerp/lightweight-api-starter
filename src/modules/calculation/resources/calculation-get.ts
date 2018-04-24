@@ -4,10 +4,7 @@ import { EndpointResponse } from "../../../core/endpoint/endpoint-response";
 
 
 async function calculationGet(params: any): Promise<EndpointResponse> {
-    return {
-        body: `Calculation GET endpoint with id: ${params.id}`,
-        status: 200
-    }
+    return new EndpointResponse(`Calculation GET endpoint with id: ${params.id}`);
 }
 
 export const endpoint: Endpoint = {

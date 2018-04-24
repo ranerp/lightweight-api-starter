@@ -21,7 +21,7 @@ router.get('/', ((req, res) => {
 }));
 
 for (let endpoint of endpoints) {
-    const routePath = urlJoin(endpointPrefix, endpoint.path);
+    const routePath = urlJoin(endpointPrefix, endpoint.path.toString());
     const routerMethod: IRouterMatcher<any> = routerMethods[endpoint.type];
 
     if(!routerMethod) {
@@ -29,8 +29,8 @@ for (let endpoint of endpoints) {
     }
 
     routerMethod(routePath, (req, res) => {
-        endpoint.function(req.params).then( content => {
-            res.status(content.status).json(content.body);
+        endpoint.function(req.params).then( response => {
+            res.status(response.status).json(response.body);
         });
     });
 }

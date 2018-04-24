@@ -3,10 +3,7 @@ import { Endpoint } from "../../../core/endpoint/endpoint";
 import { EndpointResponse } from "../../../core/endpoint/endpoint-response";
 
 async function pdfGet(params: any): Promise<EndpointResponse> {
-    return {
-        body: `PDF GET endpoint with id: ${params.id}`,
-        status: 200
-    }
+    return new EndpointResponse("Calculation POST endpoint");
 }
 
 export const endpoint: Endpoint = {
