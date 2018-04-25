@@ -28,10 +28,14 @@ for (let endpoint of endpoints) {
         continue;
     }
 
-    routerMethod(routePath, (req, res) => {
-        endpoint.function(req.params).then( response => {
-            res.status(response.status).json(response.body);
-        });
+    routerMethod(routePath, async (req, res) => {
+        try {
+            const {status, body} = await endpoint.function(req.params);
+            res.status(status).json(body);
+        }
+        catch (error) {
+            res.status(400).json({error});
+        }
     });
 }
 
