@@ -3,7 +3,7 @@ import * as path from 'path';
 import { Endpoint } from "./endpoint/endpoint";
 
 const modulesPath = path.resolve(`${__dirname}/../modules`);
-const endpointPaths = `${modulesPath}/**/resources/*.ts`;
+const endpointPaths = `${modulesPath}/**/resources/**/*.ts`;
 
 const endpoints: Endpoint[] = glob
     .sync(endpointPaths)
