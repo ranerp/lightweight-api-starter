@@ -23,5 +23,17 @@ export const endpoint = new class implements Endpoint {
         return new EndpointResponse(`GET endpoint with id: ${input.params.id}`);
     }
 };
-
 ````
+
+## Development
+
+To start the server and let the _nodemon_ worry about auto reloading the changes run the following command:
+
+```text
+npm run dev
+```
+
+When you add a new endpoint under _resources_ in some _modules_ and implement the Endpoint interface it is available 
+automatically.
+
+Enjoy!
