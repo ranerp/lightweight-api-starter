@@ -1,9 +1,9 @@
 import { HttpMethod } from "../http/http-method";
 import { PathParams } from "express-serve-static-core";
-import { EndpointFunction } from "./endpoint-function";
+import { EndpointResponse } from "./endpoint-response";
 
 export interface Endpoint {
-    type: HttpMethod;
-    path: PathParams;
-    function: EndpointFunction;
+    readonly type: HttpMethod;
+    readonly path: PathParams;
+    handler(input: EndpointInput) : Promise<EndpointResponse>;
 }

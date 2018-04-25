@@ -1,15 +1,13 @@
 import { HttpMethod } from "../../../core/http/http-method";
 import { Endpoint } from "../../../core/endpoint/endpoint";
 import { EndpointResponse } from "../../../core/endpoint/endpoint-response";
+import { PathParams } from "express-serve-static-core";
 
+export const endpoint = new class implements Endpoint {
+    readonly path: PathParams = '/calculation/:id';
+    readonly type: HttpMethod = HttpMethod.GET;
 
-async function calculationGet(params: any): Promise<EndpointResponse> {
-    return new EndpointResponse(`Calculation GET endpoint with id: ${params.id}`);
-}
-
-export const endpoint: Endpoint = {
-    type: HttpMethod.GET,
-    path: '/calculation/:id',
-    function: calculationGet
+    async handler(input: EndpointInput): Promise<EndpointResponse> {
+        return new EndpointResponse(`Calculation GET endpoint with id: ${input.params.id}`);
+    }
 };
-

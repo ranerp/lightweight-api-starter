@@ -30,7 +30,14 @@ for (let endpoint of endpoints) {
 
     routerMethod(routePath, async (req, res) => {
         try {
-            const {status, body} = await endpoint.function(req.params);
+            const {status, body} = await endpoint.handler({
+                params: req.params,
+                query: req.query,
+                body: req.body,
+                request: req,
+                response: res
+            });
+
             res.status(status).json(body);
         }
         catch (error) {
