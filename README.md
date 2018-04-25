@@ -27,7 +27,7 @@ export const endpoint = new class implements Endpoint {
 
 ## Development
 
-To start the server and let the _nodemon_ worry about auto reloading the changes run the following command:
+To start the server and let the _nodemon_ worry about auto reloading the changes, run the following command:
 
 ```text
 npm run dev
