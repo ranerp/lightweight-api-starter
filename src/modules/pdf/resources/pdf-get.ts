@@ -10,5 +10,4 @@ export const endpoint = new class implements Endpoint {
     async handler(input: EndpointInput): Promise<EndpointResponse> {
         return new EndpointResponse("Calculation POST endpoint");
     }
-
 };
