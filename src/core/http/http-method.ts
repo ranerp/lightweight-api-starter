@@ -3,5 +3,5 @@ export enum HttpMethod {
     POST,
     PUT,
     PATCH,
-    DELETE
+    DELETE,
 }

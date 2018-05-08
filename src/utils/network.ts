@@ -1,9 +1,9 @@
 export function normalizePort(val: string | undefined): number | false {
-    if (val == undefined) {
-        return false
+    if (val === undefined) {
+        return false;
     }
 
-    let port = parseInt(val, 10);
+    const port = parseInt(val, 10);
 
     if (isNaN(port)) {
         return false;

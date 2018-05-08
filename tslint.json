@@ -1,0 +1,18 @@
+{
+  "rules": {
+    "no-duplicate-variable": true,
+    "interface-name": [true, "never-prefix"],
+    "no-unused-variable": [
+      true
+    ],
+    "max-line-length": [true, 160]
+  },
+  "extends": [
+    "tslint:recommended",
+    "tslint-eslint-rules"
+  ],
+  "jsRules": {},
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
+}

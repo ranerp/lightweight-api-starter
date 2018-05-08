@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx ts-node --inspect=5858 src/server.ts",
     "dev": "npx nodemon",
-    "test": "npx ts-node ./node_modules/jasmine/bin/jasmine --config=jasmine.json"
+    "test": "npx ts-node ./node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "lint": "npx tslint -c ./tslint.json './src/**/*.ts'"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +38,8 @@
     "nodemon": "^1.17.4",
     "request": "^2.85.0",
     "rest": "^2.0.0",
-    "ts-node": "^6.0.3"
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0",
+    "tslint-eslint-rules": "^5.2.0"
   }
 }

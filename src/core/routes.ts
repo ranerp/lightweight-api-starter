@@ -1,8 +1,8 @@
-import * as urlJoin from 'url-join';
-import { HttpMethod } from "./http/http-method";
+import {Router} from "express";
+import {IRouterMatcher} from "express-serve-static-core";
+import * as urlJoin from "url-join";
+import {HttpMethod} from "./http/http-method";
 import endpoints from "./resources";
-import { Router } from "express";
-import { IRouterMatcher } from "express-serve-static-core";
 
 const router = Router();
 
@@ -14,33 +14,32 @@ const routerMethods = {
     [HttpMethod.DELETE]: router.delete.bind(router),
 };
 
-const endpointPrefix = '/api';
+const endpointPrefix = "/api";
 
-router.get('/', ((req, res) => {
-    res.send('Lightweight REST API Starter');
+router.get("/", ((req, res) => {
+    res.send("Lightweight REST API Starter");
 }));
 
-for (let endpoint of endpoints) {
+for (const endpoint of endpoints) {
     const routePath = urlJoin(endpointPrefix, endpoint.path.toString());
     const routerMethod: IRouterMatcher<any> = routerMethods[endpoint.type];
 
-    if(!routerMethod) {
+    if (!routerMethod) {
         continue;
     }
 
     routerMethod(routePath, async (req, res) => {
         try {
             const {status, body} = await endpoint.handler({
+                body: req.body,
                 params: req.params,
                 query: req.query,
-                body: req.body,
                 request: req,
-                response: res
+                response: res,
             });
 
             res.status(status).json(body);
-        }
-        catch (error) {
+        } catch (error) {
             res.status(400).json({error});
         }
     });
