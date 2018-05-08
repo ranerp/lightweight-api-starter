@@ -14,15 +14,15 @@ src/modules/<arbitrary module name>/resources/<arbitrary endpoint>
 
 All the endpoints should be anonymous classes and implement an Endpoint interface like this:
 
-````text
-export const endpoint = new class implements Endpoint {
+````typescript
+export const endpoint = new (class implements Endpoint {
     readonly path: PathParams = '/path/:id';
     readonly type: HttpMethod = HttpMethod.GET;
 
     async handler(input: EndpointInput): Promise<EndpointResponse> {
         return new EndpointResponse(`GET endpoint with id: ${input.params.id}`);
     }
-};
+})();
 ````
 
 ## Development
