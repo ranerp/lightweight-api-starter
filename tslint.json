@@ -3,7 +3,7 @@
     "no-duplicate-variable": true,
     "interface-name": [true, "never-prefix"],
     "import-spacing": true,
-    "no-unused-variable": [ true ],
+    "no-unused-variable": [true],
     "max-line-length": [true, 160]
   },
   "extends": [
