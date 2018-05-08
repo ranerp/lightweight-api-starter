@@ -8,6 +8,6 @@ export const endpoint = new (class implements Endpoint {
     public readonly type: HttpMethod = HttpMethod.GET;
 
     public async handler(input: EndpointInput): Promise<EndpointResponse> {
-        return new EndpointResponse("Calculation POST endpoint");
+        return new EndpointResponse("PDF GET endpoint");
     }
 })();
