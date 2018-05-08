@@ -1,7 +1,7 @@
-import {Router} from "express";
-import {IRouterMatcher} from "express-serve-static-core";
+import { Router } from "express";
+import { IRouterMatcher } from "express-serve-static-core";
 import * as urlJoin from "url-join";
-import {HttpMethod} from "./http/http-method";
+import { HttpMethod } from "./http/http-method";
 import endpoints from "./resources";
 
 const router = Router();
