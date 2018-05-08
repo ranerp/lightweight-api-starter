@@ -6,7 +6,7 @@ import { EndpointHttpStatus } from "../../../core/endpoint/endpoint-http-status"
 
 export const endpoint = new class implements Endpoint {
     readonly path: PathParams = '/calculation';
-    readonly type: HttpMethod = HttpMethod.GET;
+    readonly type: HttpMethod = HttpMethod.POST;
 
     async handler(input: EndpointInput): Promise<EndpointResponse> {
         return new EndpointResponse("Calculation POST endpoint", EndpointHttpStatus.ACCEPTED);
