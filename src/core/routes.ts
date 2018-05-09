@@ -16,9 +16,7 @@ const routerMethods = {
 
 const endpointPrefix = '/api';
 
-router.get('/', (_req, res) => {
-    res.send('Lightweight REST API Starter');
-});
+router.get('/', (_, res) => res.send('Lightweight REST API Starter'));
 
 for (const endpoint of endpoints) {
     const routePath = urlJoin(endpointPrefix, endpoint.path.toString());
