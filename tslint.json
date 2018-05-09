@@ -5,7 +5,8 @@
         "import-spacing": true,
         "no-unused-variable": [true],
         "max-line-length": [true, 160],
-        "quotemark": [ true, "single" ]
+        "quotemark": [ true, "single" ],
+        "object-literal-sort-keys": false
     },
     "extends": [
         "tslint:recommended",

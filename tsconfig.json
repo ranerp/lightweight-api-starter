@@ -9,8 +9,7 @@
         "outDir": "build",
         "rootDir": "./src",
         "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "object-literal-sort-keys": false
+        "forceConsistentCasingInFileNames": true
     },
     "exclude": [
         "node_modules",
