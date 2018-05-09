@@ -1,8 +1,8 @@
-import { Router } from "express";
-import { IRouterMatcher } from "express-serve-static-core";
-import * as urlJoin from "url-join";
-import { HttpMethod } from "./http/http-method";
-import endpoints from "./resources";
+import { Router } from 'express';
+import { IRouterMatcher } from 'express-serve-static-core';
+import * as urlJoin from 'url-join';
+import { HttpMethod } from './http/http-method';
+import endpoints from './resources';
 
 const router = Router();
 
@@ -14,11 +14,11 @@ const routerMethods = {
     [HttpMethod.DELETE]: router.delete.bind(router),
 };
 
-const endpointPrefix = "/api";
+const endpointPrefix = '/api';
 
-router.get("/", ((req, res) => {
-    res.send("Lightweight REST API Starter");
-}));
+router.get('/', (_req, res) => {
+    res.send('Lightweight REST API Starter');
+});
 
 for (const endpoint of endpoints) {
     const routePath = urlJoin(endpointPrefix, endpoint.path.toString());

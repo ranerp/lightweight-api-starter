@@ -1,20 +1,22 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES6",
-    "noImplicitAny": false,
-    "sourceMap": true,
-    "outDir": "build",
-    "rootDir": "./src",
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ],
-  "include": [
-    "src/**/*.ts"
-  ]
+    "compilerOptions": {
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "module": "commonjs",
+        "target": "ES6",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "outDir": "build",
+        "rootDir": "./src",
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.ts"
+    ],
+    "include": [
+        "src/**/*.ts"
+    ]
 }

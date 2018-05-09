@@ -1,6 +1,6 @@
-import * as glob from "glob";
-import * as path from "path";
-import { Endpoint } from "./endpoint/endpoint";
+import * as glob from 'glob';
+import * as path from 'path';
+import { Endpoint } from './endpoint/endpoint';
 
 const modulesPath = path.resolve(`${__dirname}/../modules`);
 const endpointPaths = `${modulesPath}/**/resources/**/*.ts`;

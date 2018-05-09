@@ -1,17 +1,18 @@
 {
-  "rules": {
-    "no-duplicate-variable": true,
-    "interface-name": [true, "never-prefix"],
-    "import-spacing": true,
-    "no-unused-variable": [true],
-    "max-line-length": [true, 160]
-  },
-  "extends": [
-    "tslint:recommended",
-    "tslint-eslint-rules"
-  ],
-  "jsRules": {},
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ]
+    "rules": {
+        "no-duplicate-variable": true,
+        "interface-name": [true, "never-prefix"],
+        "import-spacing": true,
+        "no-unused-variable": [true],
+        "max-line-length": [true, 160],
+        "quotemark": [ true, "single" ]
+    },
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
+    ],
+    "jsRules": {},
+    "rulesDirectory": [
+        "node_modules/tslint-eslint-rules/dist/rules"
+    ]
 }
